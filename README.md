@@ -89,4 +89,17 @@ Catalogue (your output directory must exsist):
 ## Calculate index
 
 index_calculation -p CORDEX create_scripts -idx TX -intake /work/ch0636/eddy/pool/intake-esm_catalogues/CORDEX_EUR-11_ensemble.json -scrpt_dir /scratch/g/g300047/index_calculation/EPIC/ -out_dir /work/ch0636/g300047/FORCING-EPIC/index_calculation -ofreq day -rename_exp -submit
-  
+
+
+
+## working with climate fact data
+
+The most tricky part is to set up an environment, it takes a long time,
+climate fact data useds xesmf so I always follow their [instructions](https://xesmf.readthedocs.io/en/stable/installation.html)
+
+    conda create --name climfactepic python==3.13
+    conda activate climfactepic
+    conda install -c conda-forge xesmf
+    conda install -c conda-forge dask netCDF4
+    conda install -c conda-forge matplotlib cartopy jupyterlab
+    
